@@ -1,0 +1,274 @@
+.main {
+    .header {
+        // border: 1px solid red;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1em 1em;
+        position: relative;
+
+        .nav {
+            font-family: Arial, Helvetica, sans-serif;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            height: 100vh;
+            background-color: #fff;
+            padding: 1em 1em;
+
+            p {
+                font-size: 18px;
+                font-weight: 700;
+                color: #006efc;
+                cursor: pointer;
+                text-align: center;
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+
+            .icon-container {
+                display: flex;
+                justify-content: flex-end;
+
+                .icon {
+                    font-size: 2rem;
+                    color: #999999;
+                    cursor: pointer;
+                }
+            }
+
+            ul {
+                list-style: none;
+                display: flex;
+                flex-direction: column;
+                gap: .8em;
+                padding-bottom: 1em;
+                border-bottom: 2px solid #d3d3d3;
+                margin-bottom: 1em;
+                font-size: 18px;
+                font-weight: 700;
+
+                li {
+                    cursor: pointer;
+
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        .logo {
+            height: 27px;
+            width: 66px;
+
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+
+        .icons {
+            color: #111820;
+            display: flex;
+            align-items: center;
+            gap: 1em;
+            font-size: 1.55rem;
+            cursor: pointer;
+
+            .bars {
+                font-size: 1.25rem;
+            }
+        }
+    }
+
+    .hero {
+        // border: 1px solid red;
+
+        .shipping {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5em;
+            padding-inline: 1em;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .ebay-image {
+            // border: 1px solid red;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0em 2em;
+            text-align: center;
+
+            p {
+                font-size: 18px;
+                color: #333;
+                margin-bottom: .5em;
+            }
+        }
+
+        .result {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1em;
+
+            p {
+                text-align: center;
+                margin-bottom: 1em;
+                color: #333;
+            }
+
+            .text {
+                font-size: .8rem;
+            }
+
+            .balance {
+                font-size: 2rem;
+                color: black;
+            }
+
+            .check-new {
+                margin-top: -2em;
+                width: 100%;
+                padding: 0 1em;
+
+                button {
+                    width: 100%;
+                    border: none;
+                    padding: .3em 1em;
+                    border-radius: 100vmax;
+                    color: #333;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .code {
+            // border: 1px solid red;
+            margin-top: 2em;
+            padding-inline: .5em;
+            width: 100%;
+
+            p {
+                font-size: 18px;
+                color: #555;
+                margin-bottom: .3em;
+                text-align: center;
+                font-weight: 600;
+            }
+
+            .error {
+                color: #dd1e31;
+                font-size: .687rem;
+            }
+
+            input {
+                width: 100%;
+                height: 50px;
+                text-indent: 1em;
+                margin-bottom: .1em;
+                border: 1px solid #d3d3d3;
+                border-radius: 3px;
+                color: #333;
+                font-size: 16px;
+                font-family: "Helvetica Neue",
+                    Helvetica,
+                    Arialsans-serif;
+
+                &:focus {
+                    border: 1px solid #0654ba;
+                    outline: #0654ba;
+                }
+            }
+
+            .check {
+                // border: 1px solid red;
+                width: 100%;
+                margin-top: 1em;
+
+                button {
+                    width: 100%;
+                    height: 42px;
+                    border: none;
+                    background-color: #0654ba;
+                    color: #fff;
+                    border-radius: 3px;
+                    font-size: 1rem;
+                    cursor: pointer;
+                }
+            }
+        }
+
+        .bottom-text {
+            // border: 1px solid red;
+            padding: 0 1em;
+            font-size: 12px;
+            color: #999999;
+            margin-top: 1em;
+
+            .terms {
+                color: #0654ba;
+            }
+        }
+    }
+
+    .footer {
+        // border: 1px solid red;
+        background-color: #111820;
+        color: #fff;
+        padding: 2em 1em;
+        margin-top: 2.5em;
+
+        .ul {
+            display: flex;
+            flex-direction: column;
+            gap: .8em;
+            line-height: 1.5rem;
+            padding-bottom: 1.25em;
+            margin-bottom: 2.5em;
+            border-bottom: 2px solid #fff;
+            list-style: none;
+
+            li {
+                cursor: pointer;
+            }
+        }
+
+        .second {
+            display: flex;
+            justify-content: center;
+
+            a {
+                text-decoration: underline;
+                text-align: center;
+                line-height: 1.5em;
+                color: #c7c7c7;
+
+                span {
+                    margin-right: .2em;
+                }
+            }
+        }
+
+        .last {
+            // border: 1px solid red;
+            color: #c7c7c7;
+            text-align: center;
+            margin-top: 1em;
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            .classic {
+                text-decoration: underline;
+                color: #c7c7c7;
+            }
+        }
+    }
+}

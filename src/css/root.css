@@ -1,0 +1,235 @@
+@import url("./home.css");
+@font-face {
+  font-family: "Helvetica Neue";
+  src: url("../../public/HelveticaNeueLight.otf");
+}
+
+.login {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 2em;
+  gap: 1em;
+}
+
+.login p {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #0654ba;
+}
+
+.login .error {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.login .email,
+.login .password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .2em;
+}
+
+.login .email input,
+.login .password input {
+  height: 35px;
+  width: 300px;
+  border-radius: .3em;
+  text-indent: 1em;
+  font-size: 1rem;
+}
+
+.login .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1em;
+}
+
+.login .buttons button {
+  border: none;
+  padding: .5em 1.5em;
+  background-color: #0654ba;
+  color: white;
+  border-radius: .2em;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  padding: 1em 1em;
+}
+
+.profile button {
+  cursor: pointer;
+  padding: .5em 1em;
+  border: none;
+  border: 2px solid green;
+  border-radius: 2px;
+}
+
+.profile p {
+  margin-bottom: .2em;
+}
+
+.profile .copy {
+  padding: .3em .5em;
+}
+
+.profile .my-url,
+.profile .balance {
+  gap: 1em;
+  background-color: green;
+  padding: .4em .8em;
+  color: white;
+  border-radius: 3px;
+}
+
+.profile .me {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.profile .buttons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: .3em;
+}
+
+.profile .buttons button {
+  margin-top: .5em;
+}
+
+.profile .change-balance {
+  margin-top: .5em;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5em;
+}
+
+.profile .change-balance button {
+  margin-right: .3em;
+}
+
+.profile .change-balance input {
+  height: 30px;
+  width: 250px;
+  max-width: 90%;
+  border-radius: 5px;
+  text-indent: 1em;
+}
+
+.profile .change-password {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: .5em;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 1em;
+}
+
+.profile .change-password input {
+  height: 30px;
+  width: 250px;
+  max-width: 90%;
+  border-radius: 5px;
+  text-indent: 1em;
+}
+
+.profile .change-password button {
+  padding: .5em 1em;
+}
+
+.profile table {
+  width: '100%';
+  border-collapse: 'collapse';
+  margin-top: '20px';
+}
+
+.profile table th {
+  border: '1px solid #ddd';
+  padding: '12px';
+  text-align: 'center';
+  background-color: '#f4f4f4';
+  border: 1px solid black;
+}
+
+.profile table td {
+  border: '1px solid #ddd';
+  padding: '12px';
+  text-align: 'center';
+  border: 1px solid black;
+}
+
+.profile table .code {
+  background-color: green;
+  color: white;
+}
+
+.profile table input {
+  border: 1px solid red;
+}
+
+.profile table button {
+  padding: '6px 12px';
+  cursor: 'pointer';
+  background-color: '#007BFF';
+  color: 'white';
+  border: 'none';
+  border-radius: '4px';
+  margin-left: '10px';
+}
+
+* {
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arialsans-serif;
+}
+/*# sourceMappingURL=root.css.map */

@@ -1,0 +1,21 @@
+@import url("./home.css");
+
+@font-face {
+    font-family: "Helvetica Neue";
+    src: url("../../public/HelveticaNeueLight.otf");
+}
+
+@import "./_login";
+@import "./_profile";
+
+* {
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Helvetica Neue",
+        Helvetica,
+        Arialsans-serif;
+}
