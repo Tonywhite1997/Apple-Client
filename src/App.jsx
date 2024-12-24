@@ -6,6 +6,8 @@ import {FaBars, FaTimes} from "react-icons/fa"
 import { BiSearch, BiUser, BiCart } from "react-icons/bi"
 import {Link} from "react-router-dom"
 import { CLIENT_BASE_URL } from "./context"
+import IMAGE from "../public/apple.jpeg"
+import LOGO from "../public/apple-logo.png"
 
 function Home(){
   const [secretPin, setSecretPin] = useState("")
@@ -54,7 +56,7 @@ function Home(){
       <header className="header">
         <div className="top">
           <div className="logo">
-            <img src="../public/apple-logo.png" alt="something demure" />
+            <img src={LOGO} alt="something demure" />
           </div>
           <div className="icons">
             <BiSearch className="icon"/>
@@ -124,7 +126,7 @@ function Home(){
 
       <section className="apple-image">
         <div className="apple">
-          <img src="../public/apple.jpeg" alt="something amazing" />
+          <img src={IMAGE} alt="something amazing" />
         </div>
       </section>
 
