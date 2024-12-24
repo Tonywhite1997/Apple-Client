@@ -11,7 +11,7 @@ function Home(){
   const [secretPin, setSecretPin] = useState("")
   const [isOpenNav, setIsOpenNav] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const [isDone, setIsDone] = useState(true)
+  const [isDone, setIsDone] = useState(false)
   const [error, setError] = useState({isError:false, message:""})
   const [cardData, setCardData] = useState("")
 
