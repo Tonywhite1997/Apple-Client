@@ -2,10 +2,39 @@
     .header {
         // border: 1px solid red;
         display: flex;
+        flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        // align-items: center;
+        gap: 1em;
         padding: 1em 1em;
         position: relative;
+
+        .top,
+        .bottom {
+            // border: 1px solid red;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            p {
+                font-weight: 600;
+            }
+
+            .bottom-right {
+                display: flex;
+                align-items: center;
+                justify-self: center;
+                gap: .5em;
+
+                button {
+                    border: none;
+                    padding: .3em .5em;
+                    background-color: #006efc;
+                    color: white;
+                    border-radius: 100vmax;
+                }
+            }
+        }
 
         .nav {
             font-family: Arial, Helvetica, sans-serif;
@@ -62,8 +91,8 @@
         }
 
         .logo {
-            height: 27px;
-            width: 66px;
+            height: 25px;
+            width: 25px;
 
             img {
                 width: 100%;
@@ -87,6 +116,7 @@
 
     .hero {
         // border: 1px solid red;
+        padding: 3em 0;
 
         .shipping {
             display: flex;
@@ -117,15 +147,25 @@
             flex-direction: column;
             align-items: center;
             gap: 1em;
+            // border: 1px solid red;
+            padding: 0 1em;
 
             p {
                 text-align: center;
-                margin-bottom: 1em;
+                // margin-bottom: 1em;
                 color: #333;
             }
 
+            small {
+                text-align: center;
+            }
+
             .text {
-                font-size: .8rem;
+                font-weight: 600;
+                text-align: center;
+                // border: 1px solid red;
+                margin-bottom: 1em;
+                margin-top: 1em;
             }
 
             .balance {
@@ -134,18 +174,8 @@
             }
 
             .check-new {
-                margin-top: -2em;
-                width: 100%;
-                padding: 0 1em;
-
-                button {
-                    width: 100%;
-                    border: none;
-                    padding: .3em 1em;
-                    border-radius: 100vmax;
-                    color: #333;
-                    cursor: pointer;
-                }
+                color: #006efc;
+                cursor: pointer;
             }
         }
 
@@ -173,7 +203,8 @@
                 height: 50px;
                 text-indent: 1em;
                 margin-bottom: .1em;
-                border: 1px solid #d3d3d3;
+                margin-top: 1em;
+                border: 1px solid black;
                 border-radius: 3px;
                 color: #333;
                 font-size: 16px;
@@ -201,27 +232,33 @@
                     border-radius: 3px;
                     font-size: 1rem;
                     cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: .5em;
                 }
-            }
-        }
-
-        .bottom-text {
-            // border: 1px solid red;
-            padding: 0 1em;
-            font-size: 12px;
-            color: #999999;
-            margin-top: 1em;
-
-            .terms {
-                color: #0654ba;
             }
         }
     }
 
+    .apple-image {
+        display: flex;
+        justify-self: center;
+        margin-top: 1em;
+
+        .apple {
+            height: 300px;
+            width: 300px;
+
+            img {
+                width: 100%;
+            }
+
+        }
+
+    }
+
     .footer {
-        // border: 1px solid red;
-        background-color: #111820;
-        color: #fff;
         padding: 2em 1em;
         margin-top: 2.5em;
 
@@ -237,18 +274,20 @@
 
             li {
                 cursor: pointer;
+                border-bottom: 1px solid grey;
+                padding: .2em 0;
             }
         }
 
         .second {
             display: flex;
             justify-content: center;
+            color: rgb(99, 98, 98);
 
             a {
                 text-decoration: underline;
                 text-align: center;
                 line-height: 1.5em;
-                color: #c7c7c7;
 
                 span {
                     margin-right: .2em;
@@ -257,8 +296,6 @@
         }
 
         .last {
-            // border: 1px solid red;
-            color: #c7c7c7;
             text-align: center;
             margin-top: 1em;
             display: flex;
@@ -267,7 +304,7 @@
 
             .classic {
                 text-decoration: underline;
-                color: #c7c7c7;
+                color: black;
             }
         }
     }

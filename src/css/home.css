@@ -2,14 +2,55 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1em;
+  padding: 1em 1em;
+  position: relative;
+}
+
+.main .header .top,
+.main .header .bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1em 1em;
-  position: relative;
+}
+
+.main .header .top p,
+.main .header .bottom p {
+  font-weight: 600;
+}
+
+.main .header .top .bottom-right,
+.main .header .bottom .bottom-right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  justify-self: center;
+  gap: .5em;
+}
+
+.main .header .top .bottom-right button,
+.main .header .bottom .bottom-right button {
+  border: none;
+  padding: .3em .5em;
+  background-color: #006efc;
+  color: white;
+  border-radius: 100vmax;
 }
 
 .main .header .nav {
@@ -76,8 +117,8 @@
 }
 
 .main .header .logo {
-  height: 27px;
-  width: 66px;
+  height: 25px;
+  width: 25px;
 }
 
 .main .header .logo img {
@@ -100,6 +141,10 @@
 
 .main .header .icons .bars {
   font-size: 1.25rem;
+}
+
+.main .hero {
+  padding: 3em 0;
 }
 
 .main .hero .shipping {
@@ -148,16 +193,23 @@
       -ms-flex-align: center;
           align-items: center;
   gap: 1em;
+  padding: 0 1em;
 }
 
 .main .hero .result p {
   text-align: center;
-  margin-bottom: 1em;
   color: #333;
 }
 
+.main .hero .result small {
+  text-align: center;
+}
+
 .main .hero .result .text {
-  font-size: .8rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
 }
 
 .main .hero .result .balance {
@@ -166,17 +218,7 @@
 }
 
 .main .hero .result .check-new {
-  margin-top: -2em;
-  width: 100%;
-  padding: 0 1em;
-}
-
-.main .hero .result .check-new button {
-  width: 100%;
-  border: none;
-  padding: .3em 1em;
-  border-radius: 100vmax;
-  color: #333;
+  color: #006efc;
   cursor: pointer;
 }
 
@@ -204,7 +246,8 @@
   height: 50px;
   text-indent: 1em;
   margin-bottom: .1em;
-  border: 1px solid #d3d3d3;
+  margin-top: 1em;
+  border: 1px solid black;
   border-radius: 3px;
   color: #333;
   font-size: 16px;
@@ -230,22 +273,36 @@
   border-radius: 3px;
   font-size: 1rem;
   cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: .5em;
 }
 
-.main .hero .bottom-text {
-  padding: 0 1em;
-  font-size: 12px;
-  color: #999999;
+.main .apple-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-self: center;
   margin-top: 1em;
 }
 
-.main .hero .bottom-text .terms {
-  color: #0654ba;
+.main .apple-image .apple {
+  height: 300px;
+  width: 300px;
+}
+
+.main .apple-image .apple img {
+  width: 100%;
 }
 
 .main .footer {
-  background-color: #111820;
-  color: #fff;
   padding: 2em 1em;
   margin-top: 2.5em;
 }
@@ -268,6 +325,8 @@
 
 .main .footer .ul li {
   cursor: pointer;
+  border-bottom: 1px solid grey;
+  padding: .2em 0;
 }
 
 .main .footer .second {
@@ -277,13 +336,13 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  color: #636262;
 }
 
 .main .footer .second a {
   text-decoration: underline;
   text-align: center;
   line-height: 1.5em;
-  color: #c7c7c7;
 }
 
 .main .footer .second a span {
@@ -291,7 +350,6 @@
 }
 
 .main .footer .last {
-  color: #c7c7c7;
   text-align: center;
   margin-top: 1em;
   display: -webkit-box;
@@ -306,6 +364,6 @@
 
 .main .footer .last .classic {
   text-decoration: underline;
-  color: #c7c7c7;
+  color: black;
 }
 /*# sourceMappingURL=home.css.map */

