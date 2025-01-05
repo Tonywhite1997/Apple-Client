@@ -25,6 +25,33 @@
         flex-direction: column;
         gap: .2em;
 
+        .password-eye {
+            position: relative;
+            border: 1px solid black;
+            width: 300px;
+            border-radius: .3em;
+
+            .fa-eye,
+            .fa-eyeSlash {
+                position: absolute;
+                top: 25%;
+                right: 2px;
+            }
+
+            input {
+                height: 35px;
+                width: 280px;
+                border: none;
+                text-indent: 1em;
+                font-size: 1rem;
+                outline: none;
+
+                &:focus {
+                    border: none;
+                }
+            }
+        }
+
         input {
             height: 35px;
             width: 300px;

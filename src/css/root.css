@@ -43,6 +43,38 @@
   gap: .2em;
 }
 
+.login .email .password-eye,
+.login .password .password-eye {
+  position: relative;
+  border: 1px solid black;
+  width: 300px;
+  border-radius: .3em;
+}
+
+.login .email .password-eye .fa-eye,
+.login .email .password-eye .fa-eyeSlash,
+.login .password .password-eye .fa-eye,
+.login .password .password-eye .fa-eyeSlash {
+  position: absolute;
+  top: 25%;
+  right: 2px;
+}
+
+.login .email .password-eye input,
+.login .password .password-eye input {
+  height: 35px;
+  width: 280px;
+  border: none;
+  text-indent: 1em;
+  font-size: 1rem;
+  outline: none;
+}
+
+.login .email .password-eye input:focus,
+.login .password .password-eye input:focus {
+  border: none;
+}
+
 .login .email input,
 .login .password input {
   height: 35px;

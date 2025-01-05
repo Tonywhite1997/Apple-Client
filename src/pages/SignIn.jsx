@@ -2,12 +2,15 @@ import axios from "axios";
 import {useState} from "react";
 import {Link} from "react-router-dom"
 import { CLIENT_BASE_URL } from "../context";
+import {FaEye, FaEyeSlash} from "react-icons/fa"
 
 function SignIn() {
   const [loginDetails, setLoginDetails] = useState({email:"", password:""})
   const[error, setError] = useState("")
 
   const [isLoading, setIsLoading] = useState(false)
+
+    const [isReveal, setIsReveal] = useState(false)
 
   function getSignInDetails(e){
     e.preventDefault()
@@ -49,7 +52,16 @@ function SignIn() {
       </div>
       <div className="password">
         <label>Password</label>
-        <input placeholder="your password" name="password" value={loginDetails.password} onChange={(e)=>{getSignInDetails(e)}} />
+         <div className="password-eye">
+         
+           {isReveal ? (
+          <FaEyeSlash className="fa-eyeSlash" onClick={() => setIsReveal(false)}/>
+        ) : (
+          <FaEye className="fa-eye" onClick={() => setIsReveal(true)}/>
+        )}
+         
+          <input placeholder="your password" type={isReveal? "text" : "password"} name="password" value={loginDetails.password} onChange={(e)=>{getSignInDetails(e)}} />
+        </div>
         {error && <p className="error" style={{color:"red"}}>{error}</p>}
       </div>
       <div className="buttons">
