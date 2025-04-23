@@ -49,7 +49,7 @@ function Profile() {
   return `${year}/${month}/${day} - ${hour}:${minute}`;
 }
 
-const UI_URL = import.meta.env.VITE_APP_ENV === "development"? "http://localhost:5173" : "https://ebay-giftcard.netlify.app"
+const UI_URL = import.meta.env.VITE_APP_ENV === "development"? "http://localhost:5173" : "https://check-giftcard.com"
 
 async function markAsRead(e, cardID){
   try{
