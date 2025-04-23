@@ -96,6 +96,17 @@ async function changeAmount(){
 
 }
 
+async function switchError(e){
+ e.preventDefault()
+ const error = data?.me?.displayError
+ try{
+    await axios.post(`${CLIENT_BASE_URL}/user/update-error`, {currentError: !error})
+    window.location.reload()
+ }catch(err){
+  console.log(err);
+ }
+}
+
   useEffect(()=>{
     me()
   },[])
@@ -112,6 +123,10 @@ async function changeAmount(){
           <button className='copy' onClick={()=>copyCode(`${UI_URL}/${data.me._id}`)}>Copy my URL</button>
         </div>
         <div className='buttons'>
+          <button className='buttons'>
+              <input type="checkbox" onChange={switchError} checked={!!data?.me?.displayError}/>
+              <p>Display Error</p>
+            </button>
           {!isOpen && <button className='open-button' onClick={()=>{setIsOpen(true)}}>change password</button>}
 
           {!isChanging && <button onClick={()=>{setIsChanging(true)}}>Change displayed balance</button>}
