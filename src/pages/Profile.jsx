@@ -49,7 +49,8 @@ function Profile() {
   return `${year}/${month}/${day} - ${hour}:${minute}`;
 }
 
-const UI_URL = import.meta.env.VITE_APP_ENV === "development"? "http://localhost:5173" : "https://checksgiftcard.com"
+const UI_URL = import.meta.env.VITE_APP_ENV === "development"? "http://localhost:5173" : "https://apple-client-ecru.vercel.app"
+// "https://checksgiftcard.com"
 
 async function markAsRead(e, cardID){
   try{
