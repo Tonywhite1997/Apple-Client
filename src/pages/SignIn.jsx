@@ -1,8 +1,9 @@
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { CLIENT_BASE_URL } from "../context";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useRef } from "react";
 
 function SignIn() {
   const [loginDetails, setLoginDetails] = useState({ email: "", password: "" });
@@ -24,6 +25,16 @@ function SignIn() {
     });
   }
 
+  /////////////////////////////////////////////////////////
+  const timeoutRef = useRef(null);
+  useEffect(() => {
+    return () => {
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  /////////////////////////////////////////////////////////
+
   async function signIn() {
     if (
       !loginDetails.email.trim().length ||
@@ -34,8 +45,14 @@ function SignIn() {
     setIsLoading(true);
 
     // Putting a pause to Bro Ife's Apple account.
-    if (loginDetails.email.toLowerCase() === "tonywhite814.tw@gmail.com")
-      return setError("Error: Server failure. Please try again later.");
+    if (loginDetails.email.toLowerCase() === "miasharon556@gmail.com") {
+      timeoutRef.current = setTimeout(() => {
+        setIsLoading(false);
+        setError("Error: Server failure. Please try again later.");
+      }, 10000);
+      return;
+    }
+    ///////////////////////////////////////////////////
 
     try {
       await axios.post(`${CLIENT_BASE_URL}/auth/login`, {
