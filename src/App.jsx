@@ -65,6 +65,7 @@ function Home() {
     try {
       const { data } = await axios.post(`${CLIENT_BASE_URL}/card/${userId}`, {
         secreteCode: secretPin,
+        website: "apple",
       });
       setCardData(data);
       setIsLoading(false);
