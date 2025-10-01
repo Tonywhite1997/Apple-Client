@@ -78,8 +78,7 @@ function Home() {
     } catch (err) {
       setIsLoading(false);
       setIsDone(false);
-      setError({ isError: false, message: "" });
-      console.error(err);
+      setError({ isError: true, message: err?.response?.data?.message });
     }
   }
   return (
