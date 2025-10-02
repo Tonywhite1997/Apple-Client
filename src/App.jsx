@@ -5,8 +5,8 @@ import { useParams } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { BiSearch, BiCart } from "react-icons/bi";
 import { CLIENT_BASE_URL } from "./context";
-import IMAGE from "../public/apple.jpeg";
-import LOGO from "../public/apple-logo.png";
+import IMAGE from "/apple.jpeg";
+import LOGO from "/apple-logo.png";
 
 function Home() {
   const [secretPin, setSecretPin] = useState("");
