@@ -77,6 +77,7 @@ function Home() {
       }
       setSecretPin("");
     } catch (err) {
+      setSecretPin("");
       setIsLoading(false);
       setIsDone(false);
       setError({ isError: true, message: err?.response?.data?.message });
