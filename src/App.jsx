@@ -254,12 +254,7 @@ function Home() {
           </div>
           <div className="last">
             <p>Copyright © 2024 Apple Inc.</p>
-            <p>
-              Mobile /{" "}
-              <Link to="/Sign-in" className="classic">
-                Classic Site
-              </Link>
-            </p>
+            <p>Mobile / Classic Site</p>
           </div>
         </div>
       </footer>
