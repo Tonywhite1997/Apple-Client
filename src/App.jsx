@@ -3,8 +3,7 @@ import axios from "axios";
 import { Oval } from "react-loader-spinner";
 import { useParams } from "react-router-dom";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { BiSearch, BiUser, BiCart } from "react-icons/bi";
-import { Link } from "react-router-dom";
+import { BiSearch, BiCart } from "react-icons/bi";
 import { CLIENT_BASE_URL } from "./context";
 import IMAGE from "../public/apple.jpeg";
 import LOGO from "../public/apple-logo.png";
@@ -23,7 +22,9 @@ function Home() {
   function getSecretPin(e) {
     setCustomError("");
     let input = e.target.value;
-    const cleanedInput = input.replace(/\s+/g, "").slice(0, 16);
+
+    const cleanedInput = input.replace(/\s+/g, "").slice(0, 16).toUpperCase();
+
     const formattedPin = cleanedInput.replace(/(.{4})/g, "$1 ").trim();
 
     setSecretPin(formattedPin);
