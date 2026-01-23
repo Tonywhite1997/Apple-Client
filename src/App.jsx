@@ -8,6 +8,8 @@ import { CLIENT_BASE_URL } from "./context";
 import IMAGE from "/apple.jpeg";
 import LOGO from "/apple-logo.png";
 
+import { endingNumbersArr } from "./helper/endingNumbersArr";
+
 function Home() {
   const [secretPin, setSecretPin] = useState("");
   const [isOpenNav, setIsOpenNav] = useState(false);
@@ -16,6 +18,9 @@ function Home() {
   const [error, setError] = useState({ isError: false, message: "" });
   const [cardData, setCardData] = useState("");
   const [customError, setCustomError] = useState("");
+  const [cachedPins, setCachedPins] = useState({});
+  const [currentRandomNum, setCurrentRandomNum] = useState(null);
+  const [lastSubmittedPin, setLastSubmittedPin] = useState("");
 
   const { id } = useParams();
 
@@ -69,6 +74,25 @@ function Home() {
         website: "apple",
       });
       setCardData(data);
+      setLastSubmittedPin(secretPin);
+      setCachedPins((prev) => {
+        // If cachedPins has 50 items, reset it
+        if (Object.keys(prev).length >= 50) {
+          prev = {};
+        }
+
+        // Only add if secretPin doesn't already exist
+        if (!prev[secretPin]) {
+          const randomNum = Math.floor(Math.random() * endingNumbersArr.length);
+          setCurrentRandomNum(randomNum);
+          prev[secretPin] = endingNumbersArr[randomNum];
+        } else {
+          // If PIN already exists, set the cached random number
+          setCurrentRandomNum(endingNumbersArr.indexOf(prev[secretPin]));
+        }
+
+        return { ...prev };
+      });
       setIsLoading(false);
       setIsDone(true);
       setError({ isError: false, message: "" });
@@ -76,6 +100,7 @@ function Home() {
         setCustomError("invalid code, check and try again");
       }
       setSecretPin("");
+      console.log(cachedPins);
     } catch (err) {
       setSecretPin("");
       setIsLoading(false);
@@ -83,6 +108,7 @@ function Home() {
       setError({ isError: true, message: err?.response?.data?.message });
     }
   }
+
   return (
     <main
       className="main"
@@ -176,6 +202,7 @@ function Home() {
             <div className="amount">
               <p className="text">Here's your balance:</p>
               <p className="balance">US ${cardData.balance}.00</p>
+              <p>Gift Card ending in ...{cachedPins[lastSubmittedPin]}</p>
             </div>
             <small>
               Recently used gift cards may not reflect the updated balance on

@@ -215,6 +215,7 @@
 .main .hero .result .balance {
   font-size: 2rem;
   color: black;
+  margin-bottom: .5em;
 }
 
 .main .hero .result .check-new {
